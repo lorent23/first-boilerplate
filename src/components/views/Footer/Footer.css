@@ -1,0 +1,12 @@
+.footer__bg {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+      background-image: url("../../assets/svgBG/svg-bg-01.jpg");
+      background-size: cover;
+      background-attachment: scroll !important;
+}

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './components/Layout';
+import Hero from './components/views/Hero/Hero';
+import About from "./components/views/About/About";
+import NotFound from "./components/views/404/404page";
+import PartnersSection from "./components/views/PartnersSection/PartnersSection";
+import Contact from "./components/reusable-components/Contact/Contact";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+        <Layout>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Hero />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/partners" element={<PartnersSection />} />
+                    <Route path="/contact-us" element={<Contact />} />
+                    <Route path="*" element={<NotFound />} /> {/* This route will catch all unknown routes */}
+                </Routes>
+            </div>
+        </Layout>
+    </BrowserRouter>
+    );
 }
 
 export default App;

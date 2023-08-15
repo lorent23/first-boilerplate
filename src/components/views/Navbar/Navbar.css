@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+  }
+
+ @media (min-width: 768px) {
+    .hamburger {
+      display: none; 
+    }
+    .switcher-right-mobile {
+      display: none;
+  }
+  }
+
+  @media (max-width: 768px) {
+    .big-menu {
+        display: none;
+    }
+    .switcher-right-mobile {
+        display: none;
+    }
+  }
+  
