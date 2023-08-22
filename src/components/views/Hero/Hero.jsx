@@ -6,6 +6,7 @@ import RobotLottieAnimation from "../Lottie-Animations/Robot";
 import ChipLottieAnimation from "../Lottie-Animations/Chip";
 import Partners from "../../reusable-components/Partners/Partners";
 import {HeroContent, AboutContent} from "..//..//reusable-components/Content/hero-content";
+import Logo from "../../reusable-components/Logo";
 
 export default function Hero() {
     const renderButton = (text, to) => (
@@ -28,6 +29,13 @@ export default function Hero() {
             <div className="container p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 md:p-16 animate__animated animate__fadeIn">
+                        <div>
+                            {/* Logo - Hidden on screens larger than medium */}
+                            <div className="md:hidden flex flex-center justify-center">
+                                <Logo/>
+                            </div>
+                        </div>
+
                         <h1
                             className="font-sans text-3xl md:text-5xl leading-8 md:leading-14 font-semibold text-center md:text-left">
                             {HeroContent.title}

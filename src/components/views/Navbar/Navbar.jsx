@@ -83,8 +83,8 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/blog" className="py-4 text-base md:text-xl font-normal">
-                                Certifications
+                            <Link to="/services" className="py-4 text-base md:text-xl font-normal">
+                                Services
                             </Link>
                         </li>
                         <li>
@@ -100,7 +100,8 @@ export default function Navbar() {
                     </ul>
                     <div className="absolute flex justify-end md:static top-2 right-4">
                         <div className="flex">
-                            <Link to="/contact-us"
+                            <Link
+                                to="/contact-us"
                                 className="flex items-center justify-center p-2 uppercase text-red-500 hover:text-white text-2xl">
                                 Contact
                             </Link>
@@ -111,44 +112,64 @@ export default function Navbar() {
 
             {/* Hamburger Menu */}
             <div
-                className="container flex flex-col justify-between px-6 mx-auto md:flex-row md:items-center sm:flex items-end sm:flex-row sm:justify-end">
+                className="container flex justify-between items-center px-6 mx-auto md:flex-row sm:flex-row">
                 {
                     isMenuOpen && (
                         <ul
                             className="grid-flow-col gap-4 mx-auto mt-6 md:mt-0 auto-cols-auto md:auto-rows-auto md:gap-2 lg:gap-12 w-full md:flex md:items-center md:justify-between md:w-auto flex flex-col items-end sm:flex-row sm:justify-end"
                             data-cy="navbar-menu">
-                            <Logo/>
+                            <div className="flex items-center">
+                                <Logo/>
+                            </div>
+
                             <li>
-                            <Link to="/" className="py-4 text-base md:text-xl font-semibold"  onClick={handleLinkClick}>
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/blog" className="py-4 text-base md:text-xl font-normal"  onClick={handleLinkClick}>
-                                Blog
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/blog" className="py-4 text-base md:text-xl font-normal"  onClick={handleLinkClick}>
-                                Certifications
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/about" className="py-4 text-base md:text-xl font-normal"  onClick={handleLinkClick}>
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/partners" className="py-4 text-base md:text-xl font-normal"  onClick={handleLinkClick}>
-                                Partners
-                            </Link>
-                        </li>
-                        <li>
-                        <Link to="/contact-us"
-                                className="flex items-center justify-center p-2 uppercase text-red-500 hover:text-white text-2xl" onClick={handleLinkClick}>
-                                Contact
-                            </Link>
-                        </li>
+                                <Link
+                                    to="/"
+                                    className="py-4 text-base md:text-xl font-semibold"
+                                    onClick={handleLinkClick}>
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/blog"
+                                    className="py-4 text-base md:text-xl font-normal"
+                                    onClick={handleLinkClick}>
+                                    Blog
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/services"
+                                    className="py-4 text-base md:text-xl font-normal"
+                                    onClick={handleLinkClick}>
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/about"
+                                    className="py-4 text-base md:text-xl font-normal"
+                                    onClick={handleLinkClick}>
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/partners"
+                                    className="py-4 text-base md:text-xl font-normal"
+                                    onClick={handleLinkClick}>
+                                    Partners
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/contact-us"
+                                    className="flex items-center justify-center p-2 uppercase text-red-500 hover:text-white text-2xl"
+                                    onClick={handleLinkClick}>
+                                    Contact
+                                </Link>
+                            </li>
                         </ul>
                     )
                 }
