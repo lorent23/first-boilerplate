@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import '@lottiefiles/lottie-player';
 import { create } from '@lottiefiles/lottie-interactivity';
 
+import './Robot.css'; // Import your CSS file
+
 const RobotLottieAnimation = () => {
   const myRef = useRef(null);
 
@@ -20,13 +22,13 @@ const RobotLottieAnimation = () => {
         ],
       });
 
-      // Disable scrolling on the body element
-      document.body.style.overflow = 'hidden';
+      // Add a class to the body to prevent scrolling
+      document.body.classList.add('no-scroll');
     };
 
     const animationFinishedListener = () => {
-      // Enable scrolling on the body element when the animation finishes
-      document.body.style.overflow = 'auto';
+      // Remove the class to allow scrolling when the animation finishes
+      document.body.classList.remove('no-scroll');
     };
 
     const currentRef = myRef.current;
@@ -41,15 +43,14 @@ const RobotLottieAnimation = () => {
         currentRef.removeEventListener('load', loadListener);
         currentRef.removeEventListener('animationcomplete', animationFinishedListener);
       }
-      
-      // Reset overflow on both body and html elements when the component unmounts
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+
+      // Remove the class on unmount to enable scrolling
+      document.body.classList.remove('no-scroll');
     };
   }, []);
 
   return (
-    <div className="MyLottieAnimation cursor-pointer">
+    <div className="MyLottieAnimation">
       {typeof window !== 'undefined' && (
         <lottie-player
           ref={myRef}

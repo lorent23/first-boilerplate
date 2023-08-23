@@ -2,17 +2,22 @@ import React from "react"
 import "./Hero.css";
 import {Link} from "react-router-dom";
 import Button from "../../reusable-components/Button";
+import { SelectorIcon } from '@heroicons/react/solid';
 import RobotLottieAnimation from "../Lottie-Animations/Robot";
 import ChipLottieAnimation from "../Lottie-Animations/Chip";
 import Partners from "../../reusable-components/Partners/Partners";
 import {HeroContent, AboutContent} from "..//..//reusable-components/Content/hero-content";
 import Logo from "../../reusable-components/Logo";
+import PartnersLink from "../../reusable-components/Partners/PartnersLink";
 
 export default function Hero() {
+
     const renderButton = (text, to) => (
         <Button
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mt-8 text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Link to={to}>
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mt-8 text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        >
+            <Link to={to} className="flex items-center">
+                <SelectorIcon className="h-5 w-5 mr-2" />
                 {text}
             </Link>
         </Button>
@@ -44,8 +49,10 @@ export default function Hero() {
                             className="text-inherit text-base md:text-xl leading-6 md:leading-9 font-normal mt-2 md:mt-6 text-center md:text-left">
                             {HeroContent.description}
                         </p>
-                        <div className="flex justify-center md:justify-start">
-                            {renderButton(HeroContent.buttonText, "/about")}
+                        <div
+                            className="flex justify-center md:justify-start"
+                            onClick={() => window.scrollTo(0, 0)}>
+                                {renderButton(HeroContent.buttonText, "/about")}
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-center">
@@ -65,7 +72,9 @@ export default function Hero() {
                                 className="md:text-base leading-6 md:leading-9 font-normal mt-2 md:mt-6 text-center md:text-left text-black">
                                 {AboutContent.description}
                             </p>
-                            <div className="flex justify-center md:justify-start">
+                            <div
+                                className="flex justify-center md:justify-start"
+                                onClick={() => window.scrollTo(0, 0)}>
                                 {renderButton(AboutContent.buttonText, "/about")}
                             </div>
                         </div>
@@ -79,6 +88,7 @@ export default function Hero() {
                 </div>
             </div>
             <Partners/>
+            <PartnersLink/>
         </div>
     );
 }

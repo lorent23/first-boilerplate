@@ -63,16 +63,16 @@ export default function About() {
           </div>
           <SectionTitle text="About FIRST" />
         </div>
-        <div className="aboutus__bg">
+        <div className="aboutus__bg animate__animated animate__fadeIn">
           <AboutText title={aboutText.title} content={aboutText.content} />
         </div>
-        <div className="Contact__Us bg-gray-800 pt-10 pb-10">
+        <div className="Contact__Us bg-gray-800 pt-10 pb-10 animate__animated animate__fadeIn">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 container mx-auto px-4 md:px-0">
             <SectionTitle text="First Quote" />
             <AboutBlockquote quote={quote} />
           </div>
         </div>
-        <div className="Contact__Us bg-white pt-10 pb-10">
+        <div className="Contact__Us bg-white pt-10 pb-10 animate__animated animate__fadeIn">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 container mx-auto px-4 md:px-0">
             <AboutImage />
             <div>

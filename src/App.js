@@ -7,6 +7,7 @@ import About from "./components/views/About/About";
 import NotFound from "./components/views/404/404page";
 import ServicesSection from "./components/views/Services/ServicesSection";
 import PartnersSection from "./components/views/PartnersSection/PartnersSection";
+import ServicesSoftware from   "./components/views/Services/ServicesSoftware";
 import Contact from "./components/reusable-components/Contact/Contact";
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
                     <Route path="/" element={<Hero />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/partners" element={<PartnersSection />} />
-                    <Route path="/services" element={<ServicesSection />} />
+                    <Route path="/services/cybersecurity" element={<ServicesSection />} />
+                    <Route path="/services/softwaresolutions" element={<ServicesSoftware />} />
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="*" element={<NotFound />} /> {/* This route will catch all unknown routes */}
                 </Routes>

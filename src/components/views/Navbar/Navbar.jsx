@@ -8,9 +8,13 @@ export default function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [scrollNav, setScrollNav] = useState(true);
+    const [isServicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
     const handleIconClick = () => {
         setMenuOpen(!isMenuOpen);
+    };
+    const toggleServicesDropdown = () => {
+        setServicesDropdownOpen(!isServicesDropdownOpen)
     };
 
     useEffect(() => {
@@ -78,14 +82,44 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/blog" className="py-4 text-base md:text-xl font-normal">
+                            <Link to="https://cybersecurity-see.com/" className="py-4 text-base md:text-xl font-normal">
                                 Blog
                             </Link>
                         </li>
                         <li>
-                            <Link to="/services" className="py-4 text-base md:text-xl font-normal">
+                            <Link
+                                className="py-4 text-base md:text-xl font-normal"
+                                onClick={toggleServicesDropdown}>
                                 Services
                             </Link>
+                            {
+                                isServicesDropdownOpen && (
+                                    <ul
+                                        className="dropdown-menu dropdown-menu absolute bg-white border border-gray-300 shadow-md py-2 px-4 rounded-lg mt-2 z-10">
+                                        <ul
+                                            className="dropdown-menu sm:w-40 md:w-48 lg:w-56 xl:w-64 bg-opacity-60"
+                                            onMouseLeave={() => setServicesDropdownOpen(false)}>
+                                            <li>
+                                                <Link
+                                                    to="/services/cybersecurity"
+                                                    onClick={handleLinkClick}
+                                                    className="block py-2 text-black hover:bg-gray-100">
+                                                    Cybersecurity Solutions
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link
+                                                    to="/services/softwaresolutions"
+                                                    onClick={handleLinkClick}
+                                                    className="block py-2 text-black hover:bg-gray-100">
+                                                    Software Engineering Solutions
+                                                </Link>
+                                            </li>
+                                            {/* Add more service items as needed */}
+                                        </ul>
+                                    </ul>
+                                )
+                            }
                         </li>
                         <li>
                             <Link to="/about" className="py-4 text-base md:text-xl font-normal">
@@ -132,7 +166,7 @@ export default function Navbar() {
                             </li>
                             <li>
                                 <Link
-                                    to="/blog"
+                                    to="https://cybersecurity-see.com/"
                                     className="py-4 text-base md:text-xl font-normal"
                                     onClick={handleLinkClick}>
                                     Blog
@@ -140,18 +174,18 @@ export default function Navbar() {
                             </li>
                             <li>
                                 <Link
-                                    to="/services"
+                                    to="/services/cybersecurity"
                                     className="py-4 text-base md:text-xl font-normal"
                                     onClick={handleLinkClick}>
-                                    Services
+                                    Cybersecurity Solutions
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    to="/about"
+                                    to="/services/softwaresolutions"
                                     className="py-4 text-base md:text-xl font-normal"
                                     onClick={handleLinkClick}>
-                                    About
+                                    Software Solutions
                                 </Link>
                             </li>
                             <li>

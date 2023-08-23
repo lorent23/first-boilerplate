@@ -5,7 +5,7 @@ import ServicesList from '../../reusable-components/ServicesList/ServicesList';
 export default function ServicesSection() {
 
     const ServicesImage = () => (
-        <div className="mx-auto md:px-0 flex justify-center items-center">
+        <div className="mx-auto md:px-0 flex justify-center items-center animate__animated animate__fadeIn">
             <img className="" src={ServiceImage} alt="services" />
         </div>
     );

@@ -10,7 +10,7 @@ const FooterLink = ({ href, text, target }) => (
 
 const FooterSection = ({ title, links }) => (
   <div>
-    <p className="font-semibold text-gray-800 dark:text-white">{title}</p>
+    <p className="font-semibold text-gray-200">{title}</p>
     <nav>
       <ul className="text-lg space-y-2">
         {links.map((link) => (
@@ -32,23 +32,19 @@ const Footer = () => {
       links: [
         { href: "/", text: "Home" },
         { href: "/about", text: "Who We Are" },
-        { href: "http://blog.fisa.pro/", text: "Our Cyber Blog" },
       ],
     },
     {
       title: "Industries",
       links: [
-        { href: "d", text: "Cyber Security Solutions" },
-        { href: "e", text: "Information Technology" },
-        { href: "f", text: "Software Engineering" },
+        { href: "/services/cybersecurity", text: "Cyber Security Solutions" },
+        { href: "/services/softwaresolutions", text: "Software Engineering" },
       ],
     },
     {
-      title: "Services",
+      title: "Blog",
       links: [
-        { href: "#g", text: "Data Protection" },
-        { href: "#gj", text: "Custom Software" },
-        { href: "#h", text: "IT Solutions" },
+        { href: "http://blog.fisa.pro/", text: "Our Cyber Blog" },
       ],
     },
     {
@@ -78,10 +74,10 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 md:my-10 " />
 
         <div className="flex flex-col items-center justify-between sm:flex-row">
-          <a href="#k">
+          <a href="/">
             <Logo />
           </a>
-          <p className="mt-4 text-sm text-gray-500 sm:mt-0 ">© Copyright FIRST {currentYear}. All Rights Reserved.</p>
+          <p className="mt-4 text-sm text-gray-200 sm:mt-0 ">© Copyright FIRST {currentYear}. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
